@@ -94,7 +94,7 @@ def data_preprocessing(df):
 
 
 html_temp = """
-<div style="background-color:tomato;padding:1.5px">
+<div style="background-color:green;padding:1.5px">
 <h1 style="color:white;text-align:center;"> KEYWORDS TRANSLATION APP</h1>
 </div><br>"""
 st.markdown(html_temp,unsafe_allow_html=True)
