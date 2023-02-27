@@ -77,6 +77,8 @@ def data_preprocessing(df):
             # my_list = df["keyword"].to_list()
             # df["Keyword_eng"] = translate_to_english(my_list)
             df["keyword_eng"] = df["keyword"].apply(lambda x: GoogleTranslator(source='auto', target='en').translate(x))
+            df = df.mask(df.eq('None')).dropna()  # remove NONE that was produced when trying to translate strange
+            # characters like :"????"
             # remove the added prefix from the rows
             df["keyword_eng"] = df["keyword_eng"].apply(lambda x: x.replace("digit-", "") if x.startswith("digit-") else x)
             df["keyword"] = df["keyword"].apply(lambda x: x.replace("digit-", "") if x.startswith("digit-") else x)
