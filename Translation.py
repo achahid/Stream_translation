@@ -61,7 +61,7 @@ def data_preprocessing(df):
         # print('ERROR: PLEASE CHECK IF YOUR DATA CONTAINS keyword COLUMN')
         st.error('Please ensure that your data includes the column **KEYWORD**', icon="🚨")
         sys.exit(1)
-
+  #
     if 'id' not in df.columns:
         df['id'] = range(len(df))
         print('id is added to the data')
